@@ -1,5 +1,12 @@
 export type RoomType = 'STANDARD' | 'VIP' | 'SUITE';
 
+export interface Booking {
+  id: string;
+  startDate: Date;
+  endDate: Date;
+  guestName: string;
+}
+
 export interface Room {
   id: string;
   number: string;
@@ -9,13 +16,5 @@ export interface Room {
   isAvailable: boolean;
   price: number;
   description: string;
-  bookings?: Booking[];
-}
-
-export interface Booking {
-  id: string;
-  roomId: string;
-  startDate: Date;
-  endDate: Date;
-  guestName: string;
+  currentBooking?: Booking;
 }
