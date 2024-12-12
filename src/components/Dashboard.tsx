@@ -19,6 +19,12 @@ export default function Dashboard() {
     setIsAddingRoom(false);
   };
 
+  const handleUpdateRoom = (updatedRoom: Room) => {
+    setRooms(rooms.map(room => 
+      room.id === updatedRoom.id ? updatedRoom : room
+    ));
+  };
+
   return (
     <div className="container mx-auto p-6">
       <div className="flex justify-between items-center mb-6">
@@ -40,7 +46,7 @@ export default function Dashboard() {
         </Card>
       )}
 
-      <RoomList rooms={rooms} />
+      <RoomList rooms={rooms} onUpdateRoom={handleUpdateRoom} />
     </div>
   );
 }
