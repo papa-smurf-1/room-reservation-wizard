@@ -97,7 +97,6 @@ export default function RoomForm({ onSubmit, onCancel }: RoomFormProps) {
           id="description"
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-          required
         />
       </div>
 
